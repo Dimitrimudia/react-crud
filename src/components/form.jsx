@@ -1,5 +1,6 @@
 import React,{Component} from "react";
-
+import Select from 'react-select';
+import { TextArea } from 'semantic-ui-react';
 export default class MyForm extends Component
 {
     constructor(props)
@@ -68,6 +69,11 @@ export default class MyForm extends Component
     }
     render()
     {
+        const options = [
+            { value: '1', label: 'New' },
+            { value: '1', label: 'Canceled' },
+            { value: '3', label: 'Finish' }
+          ]
         return(
 
             <form className="ui form">
@@ -84,7 +90,7 @@ export default class MyForm extends Component
                     </div>
                     <div className="four wide field">
                         <label>Description</label>
-                        <textarea  
+                        <TextArea  
                         rows="5" 
                         cols="40" 
                         name="content" 
@@ -92,6 +98,10 @@ export default class MyForm extends Component
                         onChange ={this.handleChange}
                         value={ this.state.form.content } 
                         />
+                    </div>
+                    <div className="four wide field">
+                    <label>Status</label>
+                        <Select options = {options}  value={ this.state.form.status } name="status"/>
                     </div>
                     <div className="four wide field">
                        <button className={this.state.btnClass} onClick={this.onFormSubmit}>{this.state.btnName}</button>

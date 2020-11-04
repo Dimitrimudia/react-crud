@@ -115,7 +115,7 @@ class App extends Component {
 
   render(){
   return (
-            <div>
+            <div className="ui container">
               <div className="ui fixed inverted menu">
                   <div className="ui container">
                     <a href="/#" className="header item">
