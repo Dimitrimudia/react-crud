@@ -80,7 +80,7 @@ class App extends Component {
       console.log(response.data.message);
     }).catch(error =>{
 
-       return console.error(error);
+       return console.error({error : error});
 
     });
     this.getTasks();
